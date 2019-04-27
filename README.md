@@ -10,7 +10,9 @@ For the time being is tested on a laptop with ubuntu.
 # Features
 
 # Getting Started
-Just Hit $mod+space and select what you want
+Just Hit **$mod+space** and select what you want
+
+**Escape** or **Return** returns to default mode.
 
 # Dependencies & Programs
 ## Desktop integration
