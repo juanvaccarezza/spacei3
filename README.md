@@ -14,18 +14,29 @@ Just Hit **$mod+space** and select what you want
 
 **Escape** or **Return** returns to default mode.
 
+# De-uglify GTK and Qt apps/Theme configuration
+Answer that works great from 
+
+    https://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
+
+    sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
+
+Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qt4-config, there is a dropdown menu setting to make qt take the GTK+ settings. That seems to work best for me. (It makes VLC and KeepassX look good.)
+
 # Dependencies & Programs
 ## Desktop integration
  * xrandr (Outputs management)
  * nm-applet (Network manager applet)
  * blueman-applet (Bluetooth applet)
- * xfce4-power-manager (Brightness control keys)
+ * xfce4-power-manager (Brightness control keys and Battery status)
  * xautolock (Automatic screen locking)
  * systemctl (System interface for hibernate, suspend, reboot)
  * import (ImageMagic)
- * convert (ImageMagiscs)
+ * convert (ImageMagic)
+ * nitrogen (Wallpaper)
 
 ## Applications Launcher
  * sensible-browser
  * i3-sensible-terminal
  * nautilus
+

@@ -8,7 +8,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # font pango:monospace 8
 
-font xft:URWGothic-Book 10
+font xft:URWGothic-Book 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -169,6 +169,7 @@ bar {
 assign [class="Jitsi"] $ws9
 for_window [class="Jitsi" title=".*Call" ] floating enable
 
+for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Nautilus"] floating enable 
 for_window [class="Nautilus"] move position center
 
@@ -300,6 +301,7 @@ mode "resize" {
 #Applications                                                         #
 #######################################################################
 exec --no-startup-id xrandr --output eDP-1 --primary
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
