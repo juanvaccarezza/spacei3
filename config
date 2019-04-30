@@ -197,8 +197,8 @@ set $space_cmd_lock import -window root /tmp/screenshot.png && convert /tmp/scre
 set $space_cmd_exit i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
 set $space_cmd_suspend systemctl suspend
 set $space_cmd_hibernate systemctl hibernate
-set $space_cmd_reboot systemctl reboot
-set $space_cmd_shutdown systemctl poweroff
+set $space_cmd_reboot i3-nagbar -t warning -m 'Do you really want to reboot?' -b 'Yes, reboot' 'systemctl reboot'
+set $space_cmd_shutdown i3-nagbar -t warning -m 'Do you really want to power off?' -b 'Yes, power off' 'systemctl poweroff'
 
 bindsym $mod+space mode "$space_mode"
 set $space_mode <b>l</b>aunch, la<b>y</b>out, <b>m</b>onitors, <b>r</b>esize, <b>s</b>ystem, <b>w</b>orkspace
@@ -234,8 +234,8 @@ mode --pango_markup "$mode_system" {
     bindsym s exec --no-startup-id $space_cmd_lock && sleep 1 && $space_cmd_suspend, mode "default"
     bindsym e exec --no-startup-id "$space_cmd_exit" , mode "default"
     bindsym h exec --no-startup-id $space_cmd_hibernate && sleep 1 && $space_cmd_suspend, mode "default"
-    bindsym r exec --no-startup-id $space_cmd_reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id $space_cmd_shutdown, mode "default"
+    bindsym r exec --no-startup-id "$space_cmd_reboot", mode "default"
+    bindsym Shift+s exec --no-startup-id "$space_cmd_shutdown", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
