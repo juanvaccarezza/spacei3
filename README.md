@@ -11,10 +11,13 @@ For the time being is tested on a laptop with ubuntu.
 
 # Getting Started
 Just Hit **$mod+space** and select what you want
+
 **Escape** or **Return** returns to default mode.
 
 **$mod+h|j|k|l** Move focus between windows
+
 **$mod+Shift+h|j|k|l** Move windows
+
 **$mod+f** Make window fullscreen
 
 # De-uglify GTK and Qt apps/Theme configuration
