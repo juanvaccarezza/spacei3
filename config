@@ -242,13 +242,14 @@ mode --pango_markup "$mode_system" {
     bindsym Escape mode "default"
 }
 
-set $mode_monitors <b>p</b>rimary only, (<b>h</b>|<b>j</b>|<b>k</b>|<b>l</b>) VGA position
+set $mode_monitors <b>m</b>irror, <b>p</b>rimary only, (<b>h</b>|<b>j</b>|<b>k</b>|<b>l</b>) VGA position
 mode --pango_markup "$mode_monitors" {
     bindsym p exec --no-startup-id xrandr --auto --output eDP-1 --output VGA-1 --off , mode "default"
-    bindsym l exec --no-startup-id xrandr --auto --output VGA-1 --right-of eDP-1 , exec --no-startup-id xrandr --auto, mode "default"
-    bindsym h exec --no-startup-id xrandr --auto --output VGA-1 --left-of eDP-1 , exec --no-startup-id xrandr --auto, mode "default"
-    bindsym k exec --no-startup-id xrandr --auto --output VGA-1 --above eDP-1 , exec --no-startup-id xrandr --auto, mode "default"
-    bindsym j exec --no-startup-id xrandr --auto --output VGA-1 --below eDP-1 , exec --no-startup-id xrandr --auto, mode "default"
+    bindsym l exec --no-startup-id xrandr --auto , exec --no-startup-id xrandr --auto --output VGA-1 --right-of eDP-1 , mode "default"
+    bindsym h exec --no-startup-id xrandr --auto , exec --no-startup-id xrandr --auto --output VGA-1 --left-of eDP-1 , mode "default"
+    bindsym k exec --no-startup-id xrandr --auto , exec --no-startup-id xrandr --auto --output VGA-1 --above eDP-1 , mode "default"
+    bindsym j exec --no-startup-id xrandr --auto , exec --no-startup-id xrandr --auto --output VGA-1 --below eDP-1 , mode "default"
+    bindsym m exec --no-startup-id xrandr --output VGA-1 --auto --scale-from 1366x768 --output eDP-1, exec --no-startup-id xrandr --output VGA-1 --same-as eDP-1, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
