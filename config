@@ -159,7 +159,6 @@ bar {
             focused_workspace  #5294E2 #5294E2 #2F343F
             active_workspace   #5294E2 #5294E2 #2F343F
             inactive_workspace #404552 #2F343F #D3DAE3
-            #binding_mode       #CC575D #CC575D #2F343F
             binding_mode       #5294E2 #5294E2 #2F343F
             urgent_workspace   #CC575D #CC575D #2F343F
         }
@@ -174,6 +173,12 @@ for_window [class="Jitsi" title=".*Call" ] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Nautilus"] floating enable 
 for_window [class="Nautilus"] move position center
+
+for_window [title="Volume Control"] floating enable 
+for_window [title="Volume Control"] move position center
+for_window [class="Blueman-manager"] floating enable 
+for_window [class="Blueman-manager"] move position center
+
 
 assign [class="Pidgin"] $ws9
 
@@ -265,7 +270,7 @@ mode "$mode_workspace" {
 set $mode_layout (f)loating toggle, (s)tacking, (t)abbed, Toggl(e) split
 mode "$mode_layout"{
      # change container layout (stacked, tabbed, toggle split)
-     bindsym f floating toggle
+     bindsym f floating toggle, mode "default"
      bindsym s layout stacking , mode "default"
      bindsym t layout tabbed, mode "default"
      bindsym e layout toggle split, mode "default"
