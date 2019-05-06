@@ -192,7 +192,7 @@ set $space_app_terminal i3-sensible-terminal
 set $space_app_web_browser sensible-browser
 
 #take screenshot & blur it & lock the screen 
-set $space_cmd_lock import -window root /tmp/screenshot.png && convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png && rm /tmp/screenshot.png && i3lock -i /tmp/screenshotblur.png 
+set $space_cmd_lock dm-tool lock 
 
 set $space_cmd_exit i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
 set $space_cmd_suspend systemctl suspend
@@ -231,9 +231,9 @@ mode --pango_markup "$mode_launch" {
 set $mode_system <b>e</b>xit, <b>h</b>ibernate, <b>l</b>ock, <b>r</b>eboot, <b>s</b>uspend, <b>S</b>hutdown
 mode --pango_markup "$mode_system" {
     bindsym l exec --no-startup-id $space_cmd_lock, mode "default"
-    bindsym s exec --no-startup-id $space_cmd_lock && sleep 1 && $space_cmd_suspend, mode "default"
+    bindsym s exec --no-startup-id $space_cmd_lock , exec --no-startup-id $space_cmd_suspend, mode "default"
     bindsym e exec --no-startup-id "$space_cmd_exit" , mode "default"
-    bindsym h exec --no-startup-id $space_cmd_hibernate && sleep 1 && $space_cmd_suspend, mode "default"
+    bindsym h exec --no-startup-id $space_cmd_lock , exec --no-startup-id $space_cmd_hibernate, mode "default"
     bindsym r exec --no-startup-id "$space_cmd_reboot", mode "default"
     bindsym Shift+s exec --no-startup-id "$space_cmd_shutdown", mode "default"
 
@@ -269,7 +269,6 @@ mode --pango_markup "$mode_monitors_vga" {
 
 set $mode_monitors_hdmi HDMI <b>m</b>irror, (<b>h</b>|<b>j</b>|<b>k</b>|<b>l</b>) position
 mode --pango_markup "$mode_monitors_hdmi" {
-    #bindsym l exec --no-startup-id xrandr --auto , exec --no-startup-id xrandr --auto --output HDMI-1 --right-of eDP-1 , mode "default"
     bindsym l exec --no-startup-id xrandr --output HDMI-1 --right-of eDP-1 --auto, mode "default"
     bindsym h exec --no-startup-id xrandr --output HDMI-1 --left-of eDP-1 --auto , mode "default"
     bindsym k exec --no-startup-id xrandr --output HDMI-1 --above eDP-1 --auto , mode "default"

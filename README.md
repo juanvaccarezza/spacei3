@@ -37,9 +37,8 @@ Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qt
  * xfce4-power-manager (Brightness control keys and Battery status)
  * xautolock (Automatic screen locking)
  * systemctl (System interface for hibernate, suspend, reboot)
- * import (ImageMagic)
- * convert (ImageMagic)
  * nitrogen (Wallpaper)
+ * lightdm (dm-tool lock)
 
 ## Applications Launcher
  * sensible-browser
