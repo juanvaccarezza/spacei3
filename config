@@ -280,6 +280,7 @@ mode --pango_markup "$mode_monitors_hdmi" {
     bindsym Escape mode "default"
 
 }
+
 set $mode_workspace (<b>h</b>|<b>j</b>|<b>k</b>|<b>l</b>) move the workpsace to outputs
 mode --pango_markup "$mode_workspace" {
     bindsym h exec --no-startup-id i3-msg move workspace to output left , mode "default"
@@ -292,13 +293,15 @@ mode --pango_markup "$mode_workspace" {
     bindsym Escape mode "default"
 }
 
-set $mode_layout <b>f</b>loating toggle, <b>s</b>tacking, <b>t</b>abbed, Toggl<b>e</b> split
+set $mode_layout Toggl<b>e</b> split, <b>f</b>loating toggle, <b>h</b>orizontal split, <b>s</b>tacking, <b>t</b>abbed, <b>v</b>ertical split
 mode --pango_markup "$mode_layout"{
      # change container layout (stacked, tabbed, toggle split)
+     bindsym e layout toggle split, mode "default"
      bindsym f floating toggle, mode "default"
+     bindsym h split h, mode "default"
      bindsym s layout stacking , mode "default"
      bindsym t layout tabbed, mode "default"
-     bindsym e layout toggle split, mode "default"
+     bindsym v split v, mode "default"
      
      # back to normal: Enter or Escape
      bindsym Return mode "default"
