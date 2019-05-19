@@ -20,6 +20,8 @@ Just Hit **$mod+space** and select what you want
 
 **$mod+f** Make window fullscreen
 
+**$mod+d** Run rofi
+
 # De-uglify GTK and Qt apps/Theme configuration
 Answer that works great from 
 
@@ -44,4 +46,5 @@ Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qt
  * sensible-browser
  * i3-sensible-terminal
  * nautilus
+ * rofi
 
