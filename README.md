@@ -41,6 +41,18 @@ Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qt
  * systemctl (System interface for hibernate, suspend, reboot)
  * nitrogen (Wallpaper)
  * lightdm (dm-tool lock)
+ 
+### Keyring daemon
+Solution from https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
+
+in /etc/zsh/zshenv add
+```
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+```
+This will sart the daemon when login to i3 from lighdm.
 
 ## Applications Launcher
  * sensible-browser
