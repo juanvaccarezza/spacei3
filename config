@@ -194,7 +194,7 @@ set $space_app_file_browser nautilus
 set $space_app_terminal i3-sensible-terminal
 set $space_app_web_browser sensible-browser
 
-#take screenshot & blur it & lock the screen 
+# Command to lock the screen
 set $space_cmd_lock dm-tool lock 
 
 set $space_cmd_exit i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
