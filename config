@@ -8,7 +8,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # font pango:monospace 8
 
-font xft:URWGothic-Book 7
+font xft:URWGothic-Book 8
 new_window pixel 1
 new_float pixel 1
 hide_edge_borders smart
@@ -140,7 +140,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 # Theme colors
 # class                 border  backgr. text    indic.   child_border
-client.focused          #5294E2 #5294E2 #D3DAE3 #FDF6E3
+client.focused          #5294E2 #5294E2 #2F343F #FDF6E3
 client.focused_inactive #2F343F #2F343F #D3DAE3 #454948
 client.unfocused        #2F343F #2F343F #D3DAE3 #454948
 client.urgent           #E25852 #E25852 #D3DAE3 #268BD2
