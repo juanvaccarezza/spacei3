@@ -46,7 +46,7 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-             
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -144,7 +144,7 @@ client.focused          #5294E2 #5294E2 #2F343F #FDF6E3
 client.focused_inactive #2F343F #2F343F #D3DAE3 #454948
 client.unfocused        #2F343F #2F343F #D3DAE3 #454948
 client.urgent           #E25852 #E25852 #D3DAE3 #268BD2
-client.placeholder      #000000 #0c0c0c #ffffff #000000 
+client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 client.background       #2B2C2B
 
@@ -158,7 +158,7 @@ bar {
             background #2F343F
             statusline #F9FAF9
             separator  #454947
-    
+
 #                               border  backgr. text
             focused_workspace  #5294E2 #5294E2 #2F343F
             active_workspace   #5294E2 #5294E2 #2F343F
@@ -174,12 +174,12 @@ bar {
 for_window [class="Jitsi" title=".*Call" ] floating enable
 
 for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Nautilus"] floating enable 
+for_window [class="Nautilus"] floating enable
 for_window [class="Nautilus"] move position center
 
-for_window [title="Volume Control"] floating enable 
+for_window [title="Volume Control"] floating enable
 for_window [title="Volume Control"] move position center
-for_window [class="Blueman-manager"] floating enable 
+for_window [class="Blueman-manager"] floating enable
 for_window [class="Blueman-manager"] move position center
 
 #######################################################################
@@ -198,7 +198,7 @@ set $space_app_terminal i3-sensible-terminal
 set $space_app_web_browser sensible-browser
 
 # Command to lock the screen
-set $space_cmd_lock dm-tool lock 
+set $space_cmd_lock dm-tool lock
 
 set $space_cmd_exit i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
 set $space_cmd_suspend systemctl suspend
@@ -210,12 +210,12 @@ set $space_cmd_shutdown i3-nagbar -t warning -m 'Do you really want to power off
 bindsym $mod+space mode "$space_mode"
 set $space_mode <b>l</b>aunch, la<b>y</b>out, <b>m</b>onitors, <b>r</b>esize, <b>s</b>ystem, <b>w</b>orkspace, <b>SPC</b> cli
 mode --pango_markup "$space_mode" {
-    bindsym l mode "$mode_launch"     
-    bindsym y mode "$mode_layout"     
-    bindsym w mode "$mode_workspace"      
-    bindsym m mode "$mode_monitors"      
-    bindsym r mode "$mode_resize"      
-    bindsym s mode "$mode_system"      
+    bindsym l mode "$mode_launch"
+    bindsym y mode "$mode_layout"
+    bindsym w mode "$mode_workspace"
+    bindsym m mode "$mode_monitors"
+    bindsym r mode "$mode_resize"
+    bindsym s mode "$mode_system"
 
     # The idea is to start a command interpreter to all actions, for the time being only rofi (A window switcher, Application launcher and dmenu replacement) is launched.
     bindsym space exec "rofi -combi-modi window,drun -show combi -modi combi", mode "default"
@@ -225,7 +225,7 @@ mode --pango_markup "$space_mode" {
     bindsym Escape mode "default"
 }
 
-# Launcher for common applications 
+# Launcher for common applications
 set $mode_launch <b>f</b>ile browser, <b>t</b>erminal, <b>w</b>eb browser
 mode --pango_markup "$mode_launch" {
     bindsym f exec --no-startup-id "$space_app_file_browser", mode "default"
@@ -255,8 +255,8 @@ mode --pango_markup "$mode_system" {
 set $mode_monitors <b>h</b>dmi, <b>p</b>rimary only, <b>v</b>ga
 mode --pango_markup "$mode_monitors" {
     bindsym p exec --no-startup-id xrandr --auto --output eDP-1 --output VGA-1 --off --output HDMI-1 --off , mode "default"
-    bindsym v mode "$mode_monitors_vga" 
-    bindsym h mode "$mode_monitors_hdmi" 
+    bindsym v mode "$mode_monitors_vga"
+    bindsym h mode "$mode_monitors_hdmi"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -297,7 +297,7 @@ mode --pango_markup "$mode_workspace" {
     bindsym l exec --no-startup-id i3-msg move workspace to output right , mode "default"
     bindsym k exec --no-startup-id i3-msg move workspace to output up , mode "default"
     bindsym j exec --no-startup-id i3-msg move workspace to output down , mode "default"
-    
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -312,7 +312,7 @@ mode --pango_markup "$mode_layout"{
      bindsym s layout stacking , mode "default"
      bindsym t layout tabbed, mode "default"
      bindsym v split v, mode "default"
-     
+
      # back to normal: Enter or Escape
      bindsym Return mode "default"
      bindsym Escape mode "default"
@@ -331,7 +331,7 @@ mode --pango_markup "$mode_resize" {
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-                
+
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
@@ -353,4 +353,3 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xautolock -time 10 -locker "$space_cmd_lock"
-
