@@ -4,18 +4,7 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# font pango:monospace 8
 
-font xft:URWGothic-Book 8
-new_window pixel 1
-new_float pixel 1
-hide_edge_borders smart
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -138,6 +127,18 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
+############################################################
+#Visuals
+############################################################
+font xft:URWGothic-Book 9
+new_window pixel 1
+new_float pixel 1
+hide_edge_borders smart
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
 # Theme colors
 # class                 border  backgr. text    indic.   child_border
 client.focused          #5294E2 #5294E2 #2F343F #FDF6E3
@@ -208,13 +209,13 @@ set $space_cmd_shutdown i3-nagbar -t warning -m 'Do you really want to power off
 
 #Initial Space i3 mode
 bindsym $mod+space mode "$space_mode"
-set $space_mode <b>l</b>aunch, la<b>y</b>out, <b>m</b>onitors, <b>r</b>esize, <b>s</b>ystem, <b>w</b>orkspace, <b>SPC</b> cli
+set $space_mode <b>c</b>ontainer, <b>l</b>aunch, la<b>y</b>out, <b>m</b>onitors, <b>s</b>ystem, <b>w</b>orkspace, <b>SPC</b> cli
 mode --pango_markup "$space_mode" {
+    bindsym c mode "$mode_container"
     bindsym l mode "$mode_launch"
     bindsym y mode "$mode_layout"
     bindsym w mode "$mode_workspace"
     bindsym m mode "$mode_monitors"
-    bindsym r mode "$mode_resize"
     bindsym s mode "$mode_system"
 
     # The idea is to start a command interpreter to all actions, for the time being only rofi (A window switcher, Application launcher and dmenu replacement) is launched.
@@ -318,6 +319,19 @@ mode --pango_markup "$mode_layout"{
      bindsym Escape mode "default"
 }
 
+
+# Container Mode
+set $mode_container container (<b>m</b>ove <b>r</b>esize)
+mode --pango_markup "$mode_container" {
+
+     bindsym m mode "$mode_move"
+     bindsym r mode "$mode_resize"
+
+     # back to normal: Enter or Escape
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+}
+
 # resize window (you can also use the mouse for that)
 set $mode_resize resize (<b>h</b>|<b>j</b>|<b>k</b>|<b>l</b>)
 mode --pango_markup "$mode_resize" {
@@ -341,6 +355,25 @@ mode --pango_markup "$mode_resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+}
+
+
+set $mode_move move (<b>h</b>|<b>j</b>|<b>k</b>|<b>l</b>)
+mode --pango_markup "$mode_move" {
+
+     bindsym Left move left
+     bindsym Down move down
+     bindsym Up move up
+     bindsym Right move right
+
+     bindsym h move left
+     bindsym j move down
+     bindsym k move up
+     bindsym l move right
+
+     # back to normal: Enter or Escape
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
 }
 
 #######################################################################
