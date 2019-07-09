@@ -9,8 +9,8 @@ set $mod Mod4
 # font pango:monospace 8
 
 font xft:URWGothic-Book 7
-new_window pixel 2
-new_float pixel 2
+new_window pixel 1
+new_float pixel 1
 hide_edge_borders smart
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
