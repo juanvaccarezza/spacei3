@@ -165,7 +165,7 @@ bar {
             active_workspace   #5294E2 #5294E2 #2F343F
             inactive_workspace #404552 #2F343F #D3DAE3
             binding_mode       #5294E2 #5294E2 #2F343F
-            urgent_workspace   #5294E2 #5294E2 #2F343F
+            urgent_workspace   #E25852 #E25852 #2F343F
         }
 }
 
