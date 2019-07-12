@@ -18,13 +18,14 @@ This coupling might change in the future.
 
 
 # Default I3 configuration override
-I Tried to maintain all the default i3 configuration. In this section is
-documented which key-byndings were modified.
+When I3 default configuration does not work shall be documented in this section.
 
-| original   | SpaceI3      | Comments                                                     |
-|------------|--------------|--------------------------------------------------------------|
-| jkl;       | hjkl         | All the moving commands where replaced to match the VIM like |
-| $mod+space | Initial mode |                                                              |
+ * *jkl;* replaced by *hjkl*, all the moving commands where replaced to match the VIM like | jjl
+  
+
+| Key-binding | original          | SpaceI3         |
+|-------------|-------------------|-----------------|
+| w$mod+space | focus mode toggle | mode space_mode |
 
 
 # Features
@@ -39,8 +40,6 @@ Just Hit **$mod+space** and select what you want
 **$mod+Shift+h|j|k|l** Move windows
 
 **$mod+f** Make window fullscreen
-
-**$mod+d** Run rofi
 
 # De-uglify GTK and Qt apps/Theme configuration
 Answer that works great from
