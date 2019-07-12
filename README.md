@@ -20,12 +20,12 @@ This coupling might change in the future.
 # Default I3 configuration override
 When I3 default configuration does not work shall be documented in this section.
 
- * *jkl;* replaced by *hjkl*, all the moving commands where replaced to match the VIM like | jjl
+ * *jkl;* replaced by *hjkl*, all the moving commands where replaced to match the VIM style.
   
 
 | Key-binding | original          | SpaceI3         |
 |-------------|-------------------|-----------------|
-| w$mod+space | focus mode toggle | mode space_mode |
+| $mod+space  | focus mode toggle | mode space_mode |
 
 
 # Features
