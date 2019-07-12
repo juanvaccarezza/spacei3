@@ -104,12 +104,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
 ############################################################
 #Visuals
 ############################################################
@@ -148,25 +142,6 @@ bar {
         }
 }
 
-#######################################################################
-#Application Specific Configuration                                   #
-#######################################################################
-for_window [class="Jitsi" title=".*Call" ] floating enable
-
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Nautilus"] floating enable
-for_window [class="Nautilus"] move position center
-
-for_window [title="Volume Control"] floating enable
-for_window [title="Volume Control"] move position center
-for_window [class="Blueman-manager"] floating enable
-for_window [class="Blueman-manager"] move position center
-
-#######################################################################
-#User  layout
-#######################################################################
-assign [class="Jitsi"] $ws9
-assign [class="Pidgin"] $ws9
 
 #######################################################################
 # MODES                                                               #
@@ -378,6 +353,31 @@ mode --pango_markup "$mode_move" {
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
+
+#######################################################################
+#Application Specific Configuration                                   #
+#######################################################################
+for_window [class="Jitsi" title=".*Call" ] floating enable
+
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Nautilus"] floating enable
+for_window [class="Nautilus"] move position center
+
+for_window [title="Volume Control"] floating enable
+for_window [title="Volume Control"] move position center
+for_window [class="Blueman-manager"] floating enable
+for_window [class="Blueman-manager"] move position center
+
+#######################################################################
+#User  layout
+#######################################################################
+assign [class="Jitsi"] $ws9
+assign [class="Pidgin"] $ws9
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 #######################################################################
 #Applications                                                         #
