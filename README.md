@@ -1,11 +1,31 @@
-# spacei3
-Spacemacs inspired i3wm configuration 
+# spaceI3
+
+Spacemacs inspired i3wm configuration implemented by using the modal key binding feature of i3.
+
+Ideally all the i3 commands can be achieved by using some mode.
 
 http://spacemacs.org/
 
-Work in progress...
-
+# Work in progress...
 For the time being is tested on a laptop with ubuntu.
+
+For the time being this configuration mixes 3 aspects
+ * The I3 configuration for modal key-bidings.
+ * The Visuals configuration such as fonts colors and borders.
+ * Some desktop environment configuration, such as wallpapers, applets, etc.
+
+This coupling might change in the future.
+
+
+# Default I3 configuration override
+I Tried to maintain all the default i3 configuration. In this section is
+documented which key-byndings were modified.
+
+| original   | SpaceI3      | Comments                                                     |
+|------------|--------------|--------------------------------------------------------------|
+| jkl;       | hjkl         | All the moving commands where replaced to match the VIM like |
+| $mod+space | Initial mode |                                                              |
+
 
 # Features
 
@@ -23,13 +43,15 @@ Just Hit **$mod+space** and select what you want
 **$mod+d** Run rofi
 
 # De-uglify GTK and Qt apps/Theme configuration
-Answer that works great from 
+Answer that works great from
 
     https://askubuntu.com/questions/598943/how-to-de-uglify-i3-wm
 
     sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
 
-Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qt4-config, there is a dropdown menu setting to make qt take the GTK+ settings. That seems to work best for me. (It makes VLC and KeepassX look good.)
+Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In
+qt4-config, there is a dropdown menu setting to make qt take the GTK+ settings.
+That seems to work best for me. (It makes VLC and KeepassX look good.)
 
 # Dependencies & Programs
 ## Desktop integration
@@ -41,7 +63,7 @@ Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qt
  * systemctl (System interface for hibernate, suspend, reboot)
  * nitrogen (Wallpaper)
  * lightdm (dm-tool lock)
- 
+
 ### Keyring daemon
 Solution from https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
 
@@ -59,4 +81,3 @@ This will sart the daemon when login to i3 from lighdm.
  * i3-sensible-terminal
  * nautilus
  * rofi
-
