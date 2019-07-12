@@ -22,9 +22,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi (A window switcher, Application launcher and dmenu replacement)
-bindsym $mod+d exec "rofi -combi-modi window,drun -show combi -modi combi"
-
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -48,7 +45,7 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
+# alternatively, you can uoe the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -78,7 +75,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -205,11 +202,10 @@ set $space_cmd_shutdown i3-nagbar -t warning -m 'Do you really want to power off
 
 #Initial Space i3 mode
 bindsym $mod+space mode "$space_mode"
-set $space_mode <b>c</b>ontainer, <b>l</b>aunch, la<b>y</b>out, <b>m</b>onitors, <b>s</b>ystem, <b>w</b>orkspace, <b>SPC</b> cli
+set $space_mode <b>c</b>ontainer, <b>l</b>aunch, <b>m</b>onitors, <b>s</b>ystem, <b>w</b>orkspace, <b>SPC</b> cli
 mode --pango_markup "$space_mode" {
     bindsym c mode "$mode_container"
     bindsym l mode "$mode_launch"
-    bindsym y mode "$mode_layout"
     bindsym w mode "$mode_workspace"
     bindsym m mode "$mode_monitors"
     bindsym s mode "$mode_system"
@@ -317,9 +313,10 @@ mode --pango_markup "$mode_layout"{
 
 
 # Container Mode
-set $mode_container container (<b>m</b>ove <b>r</b>esize)
+set $mode_container <b>l</b>ayout <b>m</b>ove <b>r</b>esize
 mode --pango_markup "$mode_container" {
 
+     bindsym l mode "$mode_layout"
      bindsym m mode "$mode_move"
      bindsym r mode "$mode_resize"
 
