@@ -206,11 +206,13 @@ mode --pango_markup "$mode_system" {
     bindsym Escape mode "default"
 }
 
-set $mode_monitors <b>h</b>dmi, <b>p</b>rimary only, <b>v</b>ga
+set $mode_monitors <b>h</b>dmi, <b>p</b>rimary only, <b>v</b>ga, presets <b>1</b>
 mode --pango_markup "$mode_monitors" {
     bindsym p exec --no-startup-id xrandr --auto --output eDP-1 --output VGA-1 --off --output HDMI-1 --off , mode "default"
     bindsym v mode "$mode_monitors_vga"
     bindsym h mode "$mode_monitors_hdmi"
+    #Preset 1 VGA top right HDMI top left Primary Bottom centered (configuration made with arandr
+    bindsym 1 exec --no-startup-id xrandr --output VGA-1 --mode 1600x900 --pos 0x0 --rotate normal --output eDP-1 --primary --mode 1366x768 --pos 936x900 --rotate normal --output HDMI-2 --off --output HDMI-1 --mode 1600x900 --pos 1600x0 --rotate normal --output DP-2 --off --output DP-1 --off , mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

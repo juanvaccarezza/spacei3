@@ -25,7 +25,8 @@ When I3 default configuration does not work shall be documented in this section.
 
 | Key-binding | original          | SpaceI3         |
 |-------------|-------------------|-----------------|
-| $mod+space  | focus mode toggle | mode space_mode |
+| $mod+space  | focus mode toggle | mode space mode |
+| $mod+h      | layout horizontal | move focus left |
 
 
 # Features
